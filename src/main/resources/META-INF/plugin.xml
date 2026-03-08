@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>com.github.pebbleloveru.jetbrainspluginforpebblewatch</id>
     <name>jetbrains-plugin-for-pebble-watch</name>
-    <vendor>pebble-love-ru</vendor>
+    <vendor>Changing,LLC.(JP)</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
