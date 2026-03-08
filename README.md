@@ -1,21 +1,21 @@
-# Pebble JetBrains IDE Plugin 
+# Pebble JetBrains IDE Plugin (Unofficial)
 
 ![Build](https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 
-## NOTICE: unofficial plugin
+This Plugin is not an official Plugin. Developed by a person who loves Pebble Watches and JetBrains IDEs.
+
+<!-- Plugin description -->
+This Plugin is for development of Pebble Watchface or App.
+It provides tools to build, run, and debug your Pebble projects directly from JetBrains IDEs,
+including an integrated emulator view, SDK management, and project scaffolding.
 
 This Plugin is not an official Plugin. Developed by a person who loves Pebble Watches and JetBrains IDEs.
 
-## Summary
+※ Requirements: install Pebble SDK (https://developer.getpebble.com/sdk/) before using this plugin
+<!-- Plugin description end -->
 
-This Plugin is for development of Pebble Watchface or App
-
-
-## Requirements
-
-- install Pebble SDK (https://developer.getpebble.com/sdk/) before using this plugin
 
 ## Installation
 
