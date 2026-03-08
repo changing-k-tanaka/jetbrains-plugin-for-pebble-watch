@@ -32,7 +32,8 @@ class MyPluginTest : BasePlatformTestCase() {
     fun testProjectService() {
         val projectService = project.service<MyProjectService>()
 
-        assertNotSame(projectService.getRandomNumber(), projectService.getRandomNumber())
+        val randomNumber = projectService.getRandomNumber()
+        assertTrue("getRandomNumber() should return a value in 1..100", randomNumber in 1..100)
     }
 
     override fun getTestDataPath() = "src/test/testData/rename"
