@@ -1,15 +1,22 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.changingktanaka.jetbrainspluginforpebblewatch</id>
+    <id>com.github.pebbleloveru.jetbrainspluginforpebblewatch</id>
     <name>jetbrains-plugin-for-pebble-watch</name>
-    <vendor>changing-k-tanaka</vendor>
+    <vendor>pebble-love-ru</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.changingktanaka.jetbrainspluginforpebblewatch.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.changingktanaka.jetbrainspluginforpebblewatch.startup.MyProjectActivity" />
+        <applicationService serviceImplementation="com.github.pebbleloveru.jetbrainspluginforpebblewatch.settings.PebbleSettings"/>
+        <applicationConfigurable
+            parentId="tools"
+            instance="com.github.pebbleloveru.jetbrainspluginforpebblewatch.settings.PebbleSettingsConfigurable"
+            id="com.github.pebbleloveru.jetbrainspluginforpebblewatch.settings.PebbleSettingsConfigurable"
+            displayName="Pebble Development Plugin"/>
+        <toolWindow factoryClass="com.github.pebbleloveru.jetbrainspluginforpebblewatch.toolWindow.MyToolWindowFactory" id="Pebble Development Plugin" icon="/icons/toolWindowPebble.svg"/>
+        <toolWindow factoryClass="com.github.pebbleloveru.jetbrainspluginforpebblewatch.toolWindow.PebbleEmulatorToolWindowFactory" id="Pebble Emulator" anchor="bottom" icon="/icons/toolWindowPebble.svg"/>
+        <postStartupActivity implementation="com.github.pebbleloveru.jetbrainspluginforpebblewatch.startup.MyProjectActivity" />
     </extensions>
 </idea-plugin>

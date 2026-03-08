@@ -1,6 +1,6 @@
 # jetbrains-plugin-for-pebble-watch
 
-![Build](https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/workflows/Build/badge.svg)
+![Build](https://github.com/pebbleloveru/jetbrains-plugin-for-pebble-watch/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 
@@ -41,7 +41,7 @@ To keep everything working, do not remove `<!-- ... -->` sections.
 
 - Manually:
 
-  Download the [latest release](https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/releases/latest) and install it manually using
+  Download the [latest release](https://github.com/pebble-love-ru/jetbrains-plugin-for-pebble-watch/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 
