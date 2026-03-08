@@ -1,4 +1,4 @@
-package com.github.pebbleloveru.jetbrainspluginforpebblewatch.vnc
+package com.github.changingjp.jetbrainspluginforpebblewatch.vnc
 
 import com.intellij.openapi.application.ApplicationManager
 import java.awt.*

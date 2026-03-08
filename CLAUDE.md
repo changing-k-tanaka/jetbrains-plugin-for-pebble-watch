@@ -60,7 +60,7 @@
 テストは `BasePlatformTestCase`（JUnit 4）を継承します。テストデータファイルは `src/test/testData/` に置き、`@TestDataPath("\$CONTENT_ROOT/src/test/testData")` で参照します。単一テストクラスの実行:
 
 ```bash
-./gradlew test --tests "com.github.pebbleloveru.jetbrainspluginforpebblewatch.MyPluginTest"
+./gradlew test --tests "com.github.changingjp.jetbrainspluginforpebblewatch.MyPluginTest"
 ```
 
 ### リリースワークフロー

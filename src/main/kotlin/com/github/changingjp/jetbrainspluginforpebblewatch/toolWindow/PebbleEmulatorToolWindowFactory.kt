@@ -1,4 +1,4 @@
-package com.github.pebbleloveru.jetbrainspluginforpebblewatch.toolWindow
+package com.github.changingjp.jetbrainspluginforpebblewatch.toolWindow
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.ToolWindow

@@ -1,4 +1,4 @@
-package com.github.pebbleloveru.jetbrainspluginforpebblewatch.toolWindow
+package com.github.changingjp.jetbrainspluginforpebblewatch.toolWindow
 
 import com.intellij.execution.configurations.GeneralCommandLine
 import com.intellij.execution.filters.TextConsoleBuilderFactory
@@ -32,9 +32,9 @@ import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.components.JBTextField
 import com.intellij.ui.content.ContentFactory
-import com.github.pebbleloveru.jetbrainspluginforpebblewatch.settings.PebbleSettings
-import com.github.pebbleloveru.jetbrainspluginforpebblewatch.settings.PebbleSettingsConfigurable
-import com.github.pebbleloveru.jetbrainspluginforpebblewatch.vnc.PebbleVncPanel
+import com.github.changingjp.jetbrainspluginforpebblewatch.settings.PebbleSettings
+import com.github.changingjp.jetbrainspluginforpebblewatch.settings.PebbleSettingsConfigurable
+import com.github.changingjp.jetbrainspluginforpebblewatch.vnc.PebbleVncPanel
 import java.awt.BorderLayout
 import com.intellij.ui.JBColor
 import java.awt.Dimension

@@ -1,4 +1,4 @@
-package com.github.pebbleloveru.jetbrainspluginforpebblewatch.vnc
+package com.github.changingjp.jetbrainspluginforpebblewatch.vnc
 
 import java.awt.image.BufferedImage
 import java.io.*

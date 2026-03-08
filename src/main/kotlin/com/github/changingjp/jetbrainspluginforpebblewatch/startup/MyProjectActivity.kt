@@ -1,4 +1,4 @@
-package com.github.pebbleloveru.jetbrainspluginforpebblewatch.startup
+package com.github.changingjp.jetbrainspluginforpebblewatch.startup
 
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project

@@ -1,4 +1,4 @@
-package com.github.pebbleloveru.jetbrainspluginforpebblewatch
+package com.github.changingjp.jetbrainspluginforpebblewatch
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

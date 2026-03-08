@@ -1,9 +1,9 @@
-package com.github.pebbleloveru.jetbrainspluginforpebblewatch.services
+package com.github.changingjp.jetbrainspluginforpebblewatch.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.github.pebbleloveru.jetbrainspluginforpebblewatch.MyBundle
+import com.github.changingjp.jetbrainspluginforpebblewatch.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {
