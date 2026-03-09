@@ -135,6 +135,10 @@ tasks {
     publishPlugin {
         dependsOn(patchChangelog)
     }
+
+    buildSearchableOptions {
+        jvmArgs("-Duser.language=en", "-Duser.country=US")
+    }
 }
 
 intellijPlatformTesting {

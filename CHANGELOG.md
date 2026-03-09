@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+## [0.0.3] - 2026-03-09
+
+### Changed
+- Updated README.md
+
+### Added
+- Plugin Icon for JetBrains Marketplace
+
 ## [0.0.2] - 2026-03-08
 - I organized various Markdown files and such.
 
