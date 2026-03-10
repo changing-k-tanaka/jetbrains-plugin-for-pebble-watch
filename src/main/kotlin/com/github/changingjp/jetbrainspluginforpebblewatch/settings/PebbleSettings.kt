@@ -6,15 +6,31 @@ import com.intellij.openapi.components.Service
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
 import com.intellij.util.messages.Topic
+import java.io.File
 
 private val DEFAULT_PEBBLE_PATH: String by lazy {
-    try {
-        val process = ProcessBuilder("which", "pebble").start()
-        val result = process.inputStream.bufferedReader().readLine()?.trim()
-        if (!result.isNullOrEmpty() && process.waitFor() == 0) result else "pebble"
-    } catch (_: Exception) {
-        "pebble"
+    // シェル経由で which を試行（bash → zsh の順）
+    val shellResult = listOf("bash", "zsh").firstNotNullOfOrNull { shell ->
+        try {
+            val process = ProcessBuilder(shell, "-c", "which pebble").start()
+            val result = process.inputStream.bufferedReader().readLine()?.trim()
+            if (!result.isNullOrEmpty() && process.waitFor() == 0) result else null
+        } catch (_: Exception) {
+            null
+        }
     }
+    if (shellResult != null) return@lazy shellResult
+
+    // シェルで見つからない場合、既知のパスを順番に確認
+    val home = System.getProperty("user.home")
+    val candidates = listOf(
+        "$home/.local/bin/pebble",
+        "$home/.pebble-sdk/pebble",
+        "$home/pebble-dev/pebble-sdk-4.5-linux64/bin/pebble",
+        "/usr/local/bin/pebble",
+        "/usr/bin/pebble",
+    )
+    candidates.firstOrNull { File(it).canExecute() } ?: "pebble"
 }
 
 @State(
