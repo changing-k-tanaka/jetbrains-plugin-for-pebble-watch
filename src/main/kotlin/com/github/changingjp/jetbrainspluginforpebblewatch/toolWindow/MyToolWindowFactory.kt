@@ -65,8 +65,6 @@ class MyToolWindowFactory : ToolWindowFactory {
         toolWindow.contentManager.addContent(content)
     }
 
-    override fun shouldBeAvailable(project: Project) = true
-
     class MyToolWindow(private val project: Project) {
 
         data class ProjectTypeOption(val label: String, val flag: String)

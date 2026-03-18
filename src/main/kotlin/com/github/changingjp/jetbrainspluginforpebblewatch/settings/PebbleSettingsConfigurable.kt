@@ -1,7 +1,7 @@
 package com.github.changingjp.jetbrainspluginforpebblewatch.settings
 
 import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory
+import com.intellij.openapi.fileChooser.FileChooserDescriptor
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.progress.ProgressIndicator
 import com.intellij.openapi.progress.ProgressManager
@@ -37,10 +37,11 @@ class PebbleSettingsConfigurable : Configurable {
         val field = TextFieldWithBrowseButton().apply {
             text = PebbleSettings.getInstance().state.pebblePath
             addBrowseFolderListener(
-                "Select Pebble Tool",
-                "Select the pebble executable",
                 null,
-                FileChooserDescriptorFactory.createSingleFileDescriptor()
+                FileChooserDescriptor(true, false, false, false, false, false).apply {
+                    title = "Select Pebble Tool"
+                    description = "Select the pebble executable"
+                }
             )
         }
         pathField = field

@@ -16,5 +16,5 @@ class PebbleEmulatorToolWindowFactory : ToolWindowFactory {
         toolWindow.contentManager.addContent(content)
     }
 
-    override fun shouldBeAvailable(project: Project) = true
+
 }
