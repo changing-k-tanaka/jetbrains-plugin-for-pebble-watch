@@ -8,6 +8,10 @@
 
 - We've added the ability to take screenshots
 
+## [0.9.1] - 2026-03-18
+
+- fix deprecates
+
 ## [0.9.0] - 2026-03-10
 
 - fix market icon
@@ -33,6 +37,7 @@
 
 [Unreleased]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.5...HEAD
 [0.9.5]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.0...0.9.5
+[0.9.1]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.0...0.9.1
 [0.9.0]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.0.3...0.9.0
 [0.0.3]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.0.1...0.0.2
