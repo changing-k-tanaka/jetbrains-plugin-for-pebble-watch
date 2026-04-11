@@ -19,7 +19,10 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.ui.ValidationInfo
+import com.intellij.notification.NotificationGroupManager
+import com.intellij.notification.NotificationType
 import com.intellij.openapi.util.Disposer
+import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
@@ -125,6 +128,12 @@ class MyToolWindowFactory : ToolWindowFactory {
                 withLogsCheckBox.maximumSize = Dimension(Int.MAX_VALUE, withLogsCheckBox.preferredSize.height)
                 add(withLogsCheckBox)
 
+                // Screenshot button for emulator
+                add(JButton("Screenshot").apply {
+                    alignmentX = 0.0f
+                    addActionListener { screenshotEmulator() }
+                })
+
                 // Empty Line margin
                 add(Box.createVerticalStrut(16))
 
@@ -141,6 +150,12 @@ class MyToolWindowFactory : ToolWindowFactory {
                 withLogsPhoneCheckBox.alignmentX = 0.0f
                 withLogsPhoneCheckBox.maximumSize = Dimension(Int.MAX_VALUE, withLogsPhoneCheckBox.preferredSize.height)
                 add(withLogsPhoneCheckBox)
+
+                // Screenshot button for phone
+                add(JButton("Screenshot").apply {
+                    alignmentX = 0.0f
+                    addActionListener { screenshotPhone() }
+                })
 
                 // Empty Line margin
                 add(Box.createVerticalStrut(4))
@@ -550,6 +565,58 @@ class MyToolWindowFactory : ToolWindowFactory {
                     SwingUtilities.invokeLater { saveFile(zipFile, "zip") }
                 }
             })
+        }
+
+        private fun screenshotEmulator() {
+            val pebblePath = PebbleSettings.getInstance().state.pebblePath
+            val platform = platforms[platformCombo.selectedItem as String] ?: "emery"
+            runScreenshot("$pebblePath screenshot --emulator $platform --vnc")
+        }
+
+        private fun screenshotPhone() {
+            val phoneIp = phoneIpField.text.trim()
+            if (phoneIp.isEmpty()) {
+                Messages.showErrorDialog(project, "Please enter a phone IP address.", "Screenshot Error")
+                return
+            }
+            val pebblePath = PebbleSettings.getInstance().state.pebblePath
+            runScreenshot("$pebblePath screenshot --phone $phoneIp")
+        }
+
+        private fun runScreenshot(cmd: String) {
+            ApplicationManager.getApplication().executeOnPooledThread {
+                try {
+                    val process = ProcessBuilder("bash", "-c", cmd)
+                        .directory(File(project.basePath ?: return@executeOnPooledThread))
+                        .redirectErrorStream(true)
+                        .start()
+                    val output = process.inputStream.bufferedReader().readText().trim()
+                    val exitCode = process.waitFor()
+                    SwingUtilities.invokeLater {
+                        if (exitCode == 0) {
+                            LocalFileSystem.getInstance()
+                                .refreshAndFindFileByPath(project.basePath ?: "")
+                                ?.refresh(true, false)
+                        }
+                    val (type, message) = if (exitCode == 0) {
+                            NotificationType.INFORMATION to "Screenshot saved.\n$output"
+                        } else {
+                            NotificationType.ERROR to "Screenshot failed.\n$output"
+                        }
+                        NotificationGroupManager.getInstance()
+                            .getNotificationGroup("PebbleAppFaceDevelopmentPluginUnOfficial")
+                            .createNotification(message, type)
+                            .notify(project)
+                    }
+                } catch (e: Exception) {
+                    SwingUtilities.invokeLater {
+                        NotificationGroupManager.getInstance()
+                            .getNotificationGroup("PebbleAppFaceDevelopmentPluginUnOfficial")
+                            .createNotification("Screenshot failed: ${e.message}", NotificationType.ERROR)
+                            .notify(project)
+                    }
+                }
+            }
         }
 
         private fun launchPhone() {

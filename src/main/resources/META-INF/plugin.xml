@@ -18,5 +18,6 @@
         <toolWindow factoryClass="com.github.changingjp.jetbrainspluginforpebblewatch.toolWindow.MyToolWindowFactory" id="Pebble Development Plugin" icon="/icons/toolWindowPebble.svg"/>
         <toolWindow factoryClass="com.github.changingjp.jetbrainspluginforpebblewatch.toolWindow.PebbleEmulatorToolWindowFactory" id="Pebble Emulator" anchor="bottom" icon="/icons/toolWindowPebble.svg"/>
         <postStartupActivity implementation="com.github.changingjp.jetbrainspluginforpebblewatch.startup.MyProjectActivity" />
+        <notificationGroup id="PebbleAppFaceDevelopmentPluginUnOfficial" displayType="BALLOON"/>
     </extensions>
 </idea-plugin>
