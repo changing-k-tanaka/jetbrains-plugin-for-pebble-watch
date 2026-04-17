@@ -737,6 +737,12 @@ class MyToolWindowFactory : ToolWindowFactory {
                         val exitCode = process.waitFor()
                         if (exitCode == 0) {
                             File(parentPath, "$projectName/.gitignore").writeText(".idea/\n")
+                            val ideaDir = File(parentPath, "$projectName/.idea")
+                            ideaDir.mkdirs()
+                            File(ideaDir, ".name").writeText(projectName)
+                            File(ideaDir, "workspace.xml").writeText(
+                                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n</project>"
+                            )
                         }
                         SwingUtilities.invokeLater {
                             if (exitCode == 0) {
