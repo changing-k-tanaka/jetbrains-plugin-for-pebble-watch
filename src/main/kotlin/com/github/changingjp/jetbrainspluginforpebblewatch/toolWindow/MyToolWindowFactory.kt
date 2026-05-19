@@ -472,7 +472,7 @@ class MyToolWindowFactory : ToolWindowFactory {
             val pebblePath = PebbleSettings.getInstance().state.pebblePath
             ApplicationManager.getApplication().executeOnPooledThread {
                 try {
-                    val commandLine = GeneralCommandLine("bash", "-c", "$pebblePath kill && $pebblePath wipe")
+                    val commandLine = GeneralCommandLine("bash", "-c", "pkill -x qemu-pebble; sleep 1; $pebblePath kill && $pebblePath wipe")
                     val handler = OSProcessHandler(commandLine)
                     handler.startNotify()
                 } catch (_: Exception) { }
