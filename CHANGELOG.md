@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+## [0.9.7] - 2026-05-19
+
+- fix wipe button process
+
 ## [0.9.6] - 2026-04-18
 
 - Fixed an issue where the contents of the .idea directory were duplicated and the project name was displayed incorrectly when creating a new project using the “Create New Project” button.
@@ -39,7 +43,8 @@
 
 - Covers most of the features of the official VSCode plugins ([coredevices/pebble-vscode](https://github.com/coredevices/pebble-vscode))
 
-[Unreleased]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.6...HEAD
+[Unreleased]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.7...HEAD
+[0.9.7]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.6...0.9.7
 [0.9.6]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.5...0.9.6
 [0.9.5]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.1...0.9.5
 [0.9.1]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.0...0.9.1
