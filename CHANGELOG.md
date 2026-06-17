@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+## [0.9.8] - 2026-06-17
+
+- Added cleanup procedures when the plugin or IDE is closed
+
 ## [0.9.7] - 2026-05-19
 
 - fix wipe button process
@@ -43,7 +47,8 @@
 
 - Covers most of the features of the official VSCode plugins ([coredevices/pebble-vscode](https://github.com/coredevices/pebble-vscode))
 
-[Unreleased]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.7...HEAD
+[Unreleased]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.8...HEAD
+[0.9.8]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.7...0.9.8
 [0.9.7]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.6...0.9.7
 [0.9.6]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.5...0.9.6
 [0.9.5]: https://github.com/changing-k-tanaka/jetbrains-plugin-for-pebble-watch/compare/0.9.1...0.9.5
