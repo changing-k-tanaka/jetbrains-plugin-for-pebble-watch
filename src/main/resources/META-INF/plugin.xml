@@ -20,4 +20,9 @@
         <postStartupActivity implementation="com.github.changingjp.jetbrainspluginforpebblewatch.startup.MyProjectActivity" />
         <notificationGroup id="PebbleAppFaceDevelopmentPluginUnOfficial" displayType="BALLOON"/>
     </extensions>
+
+    <applicationListeners>
+        <listener class="com.github.changingjp.jetbrainspluginforpebblewatch.listener.PebbleAppLifecycleListener"
+                  topic="com.intellij.ide.AppLifecycleListener"/>
+    </applicationListeners>
 </idea-plugin>
